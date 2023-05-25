@@ -82,4 +82,12 @@ public class ProjectDAOImpl implements ProjectDAO {
 		return r;
 	}
 
+	@Override
+	public List<Project> getProjectById(int id) {
+		String aString="select * from project NATURAL JOIN user where user_id=1";
+		List<Project> list = new ArrayList<>();
+		list=jdbcTemplate.query(aString,new BeanPropertyRowMapper<Project>(Project.class));
+		return list;
+	}
+
 }

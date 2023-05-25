@@ -60,4 +60,8 @@ public class ProjectServiceImpl implements ProjectService {
 		int r=projectDAO.deleteProject(project_id);
 		return r;
 	}
+	
+	public List<Project> getProjectById(int id){
+		return projectDAO.getProjectById(id);
+	}
 }

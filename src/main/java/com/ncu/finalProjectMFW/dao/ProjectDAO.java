@@ -19,4 +19,6 @@ public interface ProjectDAO {
 	public int updateProject(Project project);
 	
 	public int deleteProject(int project_id);
+	
+	public List<Project> getProjectById(int id);
 }

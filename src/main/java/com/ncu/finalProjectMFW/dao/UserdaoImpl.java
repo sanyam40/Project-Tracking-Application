@@ -36,4 +36,16 @@ public class UserdaoImpl implements Userdao {
 		System.out.println(list);
 		return list;
 	}
+	
+	public int insertUser(User user) {
+		String sql = "insert into user(email,password,user_type) values(?,?,?)";
+		Object[] query = {user.getEmail(),user.getPassword(),"user"};
+		return jdbcTemplate.update(sql, query);
+	}
+	
+	public int updateUser(User user) {
+		String aString="update user set email=?,password=? where user_id=?";
+		Object[] queryObjects= {user.getEmail(),user.getPassword(),user.getUser_id()};
+		return jdbcTemplate.update(aString,queryObjects);
+	}
 }

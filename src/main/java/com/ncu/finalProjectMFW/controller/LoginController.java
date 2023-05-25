@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +37,8 @@ public class LoginController {
 
 	/* FOR CHECKING IF THE LOGIN DETAILS ARE CORRECT OR NOT */
 	@RequestMapping("/login")
-	public String login(@Valid @ModelAttribute("user") User user, BindingResult bindingResult,HttpServletRequest request) {
+	public String login(@Valid @ModelAttribute("user") User user, BindingResult bindingResult,
+			HttpServletRequest request,Model model) {
 
 		if (bindingResult.hasErrors()) {
 			return "login";
@@ -44,36 +46,45 @@ public class LoginController {
 
 			List<User> list = userService.userloginn(user.getEmail(), user.getPassword());
 			String userString = "";
+			String userIdString="";
 
 			for (User a : list) {
-				userString = a.getUser_type();
+				userString = a.getUser_type();	
 			}
+			
+			for(User b:list) {
+				userIdString=b.getUser_id();
+			}
+			
+			System.out.println(userIdString);
 
 			if (list.isEmpty()) {
 				return "redirect:/";
 			} else {
 				if (userString.equals("admin")) {
-					
-					HttpSession session=request.getSession();
-					session.setAttribute("type","admin"); 
-					
+
+					HttpSession session = request.getSession();
+					session.setAttribute("type", "admin");
+
 					return "redirect:/admin";
 				} else {
+
+					HttpSession session = request.getSession();
+					session.setAttribute("type", "user");
 					
-					HttpSession session=request.getSession();
-					session.setAttribute("type","user"); 
-					
-					return "user";
+					model.addAttribute("userid",userIdString);
+
+					return "userpanel";
 				}
 			}
 
 		}
 	}
-	
+
 	/* This is the Handler Method for terminating the session */
-	@RequestMapping(value="/logout")
+	@RequestMapping(value = "/logout")
 	public String logout(HttpServletRequest request) {
-		HttpSession session=request.getSession(false);
+		HttpSession session = request.getSession(false);
 		session.invalidate();
 		return "login";
 	}
