@@ -1,6 +1,6 @@
 # Project-Tracking-Application
 
-This Repository Contains Codebase For Project Tracking Application ( JIRA Clone ) Using Spring Framework.
+This Repository Contains Codebase For Project Tracking Application ( JIRA Clone ) Using Spring Framework
 
 Modules:
 
