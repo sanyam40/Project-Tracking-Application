@@ -19,11 +19,11 @@ Modules:
 
 # Technologies Used
 
-- Spring MVC: A Java framework used for building web applications, providing a model-view-controller architecture.
-- JDBC Template: A Spring framework abstraction for working with relational databases, simplifying database operations.
-- AOP (Aspect-Oriented Programming): A programming paradigm used for modularizing cross-cutting concerns, enhancing code modularity and maintainability.
-- HTML: The standard markup language used for structuring web pages.
-- CSS: Used for styling and layout of HTML elements, ensuring a visually appealing presentation of the web pages.
+- Spring MVC
+- JDBC Template
+- AOP
+- HTML
+- CSS
 
 # DataBase Configuration
 <img width="488" alt="db_1" src="https://github.com/sanyam40/Project-Tracking-Application/assets/87993985/01bd47aa-82d3-4da7-b643-a3948d6830ab">
