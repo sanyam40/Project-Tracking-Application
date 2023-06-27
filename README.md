@@ -1,6 +1,6 @@
 # Project-Tracking-Application
 
-A software solution to be used in Agile based companies to track and manage agile software development using one tool. from this one tool, the reporting of issues and the daily development progress of a project can be seen and reported and helped in delivering the deliverables faster.
+This Repository Contains Codebase For Project Tracking Application ( JIRA Clone ) Using Spring Framework.
 
 Modules:
 
@@ -19,13 +19,14 @@ Modules:
 
 # Technologies Used
 
+- Maven
 - Spring MVC
 - JDBC Template
 - AOP
 - HTML
 - CSS
 
-# DataBase Configuration
+# DataBase Configuration ( MySQL )
 <img width="488" alt="db_1" src="https://github.com/sanyam40/Project-Tracking-Application/assets/87993985/01bd47aa-82d3-4da7-b643-a3948d6830ab">
 <img width="518" alt="db_2" src="https://github.com/sanyam40/Project-Tracking-Application/assets/87993985/8d7f26cb-77cc-4b79-8549-906a63556471">
 
